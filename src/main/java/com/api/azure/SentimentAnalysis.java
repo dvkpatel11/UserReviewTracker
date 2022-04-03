@@ -1,12 +1,36 @@
 package com.api.azure;
 
-import org.springframework.beans.factory.annotation.Value;
-
-import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import java.util.Locale;
 
 public class SentimentAnalysis {
+
+    private TextDocument document;
+    private String sentiment;
+
+    public SentimentAnalysis () {}
+
+    public SentimentAnalysis (TextDocument document) {
+        this.document = document;
+    }
+
+    public SentimentAnalysis (TextDocument document, String sentiment) {
+        this.document = document;
+        this.sentiment = sentiment.toLowerCase().trim();
+    }
+
+    public TextDocument getDocument () {
+        return this.document;
+    }
+
+    public void setDocument (TextDocument document) {
+        this.document = document;
+    }
+
+    public String getSentiment () {
+        return this.sentiment;
+    }
+
+    public void setSentiment (String sentiment) {
+        this.sentiment = sentiment;
+    }
 }
