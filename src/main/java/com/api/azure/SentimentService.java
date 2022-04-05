@@ -59,6 +59,7 @@ public class SentimentService {
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
         if (response.statusCode() != 200) {
+            System.out.println(response.statusCode());
             System.out.println(response.body());
             throw new RuntimeException("Error making the API call");
         }

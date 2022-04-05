@@ -8,7 +8,7 @@ public class TextAnalyticsRequest {
     private List<TextDocument> documentList = new ArrayList<>();
 
     public List<TextDocument> getDocumentList() {
-        return documentList;
+        return this.documentList;
     }
 
     public void setDocumentList (List<TextDocument> documentList) {

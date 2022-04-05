@@ -18,7 +18,7 @@ public class SentimentServiceTest {
     @Test
     void positiveSentimentTest() throws IOException, InterruptedException {
 
-        SentimentAnalysis analysis = this.sentimentService.requestAnalysis("1", "I relish sweet food", "en");
+        SentimentAnalysis analysis = this.sentimentService.requestAnalysis("I relish sweet food", "en");
         assertNotNull(analysis);
         assertEquals("positive", analysis.getSentiment());
 

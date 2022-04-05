@@ -6,11 +6,12 @@ import feign.RequestLine;
 
 public interface TwilioClient {
 
+    // Method to call Twilio's SMS API to send a text message
     @Headers("Content-Type: application/x-www-form-urlencoded")
-    @RequestLine("POST /2022-03-01/Accounts/{AccountSid}/Calls.json")
-    public void sendVoiceMessage(@Param("AccountSid") String accountSid,
+    @RequestLine("POST /2010-04-01/Accounts/{AccountSid}/Messages.json")
+    public void sendTextMessage(@Param("AccountSid") String accountSid,
             @Param("To") String to,
             @Param("From") String from,
-            @Param("Twim") String twiml);
+            @Param("Body") String body);
 
 }
